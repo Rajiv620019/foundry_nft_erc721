@@ -16,4 +16,8 @@ contract DogieNft is ERC721 {
         _safeMint(msg.sender, s_tokenCounter);
         s_tokenCounter++;
     }
+
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
+        return s_tokenToUri[tokenId];
+    }
 }
